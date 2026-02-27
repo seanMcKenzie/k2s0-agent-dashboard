@@ -931,6 +931,235 @@
       gap: 10px;
     }
     .offline-notice.visible { display: flex; }
+
+    /* ==============================
+       HISTORY TAB
+    ============================== */
+    .history-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 16px 0 12px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .history-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 8px 14px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      outline: none;
+    }
+    .history-input:focus { border-color: var(--accent); }
+    .history-select {
+      padding: 8px 10px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-size: 0.82rem;
+      outline: none;
+      cursor: pointer;
+    }
+    .history-select:focus { border-color: var(--accent); }
+    .history-clear-btn {
+      padding: 8px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .history-clear-btn:hover { background: var(--bg-card-hover); color: var(--text-primary); }
+    .history-count {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      margin-left: auto;
+    }
+
+    /* Summary chart */
+    .history-summary-panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .history-summary-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 80px;
+      margin-top: 12px;
+      overflow-x: auto;
+    }
+    .history-chart-day {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      min-width: 48px;
+      flex: 1;
+    }
+    .history-chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 52px;
+      width: 100%;
+      justify-content: center;
+    }
+    .history-chart-bar {
+      width: 6px;
+      border-radius: 3px 3px 0 0;
+      min-height: 2px;
+      transition: height 0.3s ease;
+    }
+    .history-chart-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    .history-chart-total {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+    .history-chart-loading {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Results */
+    .history-results {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-height: 200px;
+    }
+    .history-loading {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .history-empty {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .history-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .history-entry:hover { background: var(--bg-card-hover); border-color: var(--border); }
+    .history-entry.expanded { border-color: var(--accent-dim); }
+    .history-entry-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .history-ts {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .history-agent-badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .history-event-badge {
+      font-size: 0.68rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--bg-panel);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .history-title {
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      flex: 1;
+    }
+    .history-file {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: monospace;
+      white-space: nowrap;
+    }
+    .history-detail-panel {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: var(--bg-input);
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+    }
+    .history-entry.expanded .history-detail-panel { display: block; }
+    .history-detail-text {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.5;
+    }
+    .history-detail-tags {
+      margin-top: 8px;
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+    .history-tag {
+      font-size: 0.67rem;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: var(--accent-dim);
+      color: var(--accent);
+    }
+
+    /* Pagination */
+    .history-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px 0;
+    }
+    .history-page-btn {
+      padding: 7px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .history-page-btn:hover:not(:disabled) { background: var(--bg-card-hover); color: var(--text-primary); }
+    .history-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .history-page-info {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
@@ -960,6 +1189,7 @@
     <button class="tab-btn active" onclick="switchTab('agents')">🧑‍💻 Agents</button>
     <button class="tab-btn" onclick="switchTab('feed')">📡 Activity Feed</button>
     <button class="tab-btn" onclick="switchTab('insights')">📊 Insights &amp; Usage</button>
+    <button class="tab-btn" onclick="switchTab('history')">🗂 History</button>
   </div>
 
   <!-- ===== MAIN ===== -->
@@ -1074,6 +1304,57 @@
           <tbody id="usageTableBody"></tbody>
         </table>
       </div>
+    </div>
+
+    <!-- ===== TAB: HISTORY ===== -->
+    <div class="tab-content" id="tab-history">
+
+      <!-- Search Controls -->
+      <div class="history-controls">
+        <input type="text" id="historySearch" class="history-input" placeholder="🔍 Search logs…" oninput="historySearchDebounced()" />
+        <select id="historyAgentFilter" class="history-select" onchange="loadHistory()">
+          <option value="">All Agents</option>
+          <option value="main">🤖 K2S0</option>
+          <option value="developer">👨‍💻 Charlie</option>
+          <option value="pm">📋 Dennis</option>
+          <option value="qa">🔍 Mac</option>
+          <option value="devops">🔧 Frank</option>
+          <option value="research">🔬 Sweet Dee</option>
+          <option value="designer">🎨 Cricket</option>
+        </select>
+        <input type="date" id="historyDateFilter" class="history-select" onchange="loadHistory()" />
+        <select id="historyEventFilter" class="history-select" onchange="loadHistory()">
+          <option value="">All Event Types</option>
+          <option value="boot">boot</option>
+          <option value="memory_update">memory_update</option>
+          <option value="file_change">file_change</option>
+          <option value="task_start">task_start</option>
+          <option value="task_complete">task_complete</option>
+        </select>
+        <button class="history-clear-btn" onclick="clearHistoryFilters()">✕ Clear</button>
+        <span class="history-count" id="historyCount">— entries</span>
+      </div>
+
+      <!-- Summary Chart -->
+      <div class="history-summary-panel">
+        <div class="insight-panel-title">Activity – Past 7 Days</div>
+        <div id="historySummaryChart" class="history-summary-chart">
+          <div class="history-chart-loading">Loading summary…</div>
+        </div>
+      </div>
+
+      <!-- Results List -->
+      <div id="historyResults" class="history-results">
+        <div class="history-loading">⏳ Loading history…</div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="history-pagination" id="historyPagination">
+        <button class="history-page-btn" id="historyPrevBtn" onclick="historyPrevPage()" disabled>← Prev</button>
+        <span class="history-page-info" id="historyPageInfo">Page 1</span>
+        <button class="history-page-btn" id="historyNextBtn" onclick="historyNextPage()">Next →</button>
+      </div>
+
     </div>
 
   </main>
@@ -1686,6 +1967,230 @@ function timeAgo(iso) {
     await fetchActivity();
   }, POLL_MS);
 })();
+
+// ================================================
+// HISTORY TAB
+// ================================================
+const HISTORY_API  = 'http://localhost:7800/logs';
+const HISTORY_PAGE = 50;
+
+let historyOffset        = 0;
+let historyTotalEntries  = 0;
+let historyCurrentPage   = 1;
+let historySearchTimer   = null;
+
+const AGENT_COLORS = {
+  main:      '#4f8ef7',
+  developer: '#22c55e',
+  pm:        '#a855f7',
+  qa:        '#06b6d4',
+  devops:    '#eab308',
+  research:  '#f97316',
+  designer:  '#ec4899',
+};
+
+const AGENT_LABELS = {
+  main:      '🤖 K2S0',
+  developer: '👨‍💻 Charlie',
+  pm:        '📋 Dennis',
+  qa:        '🔍 Mac',
+  devops:    '🔧 Frank',
+  research:  '🔬 Sweet Dee',
+  designer:  '🎨 Cricket',
+};
+
+function historySearchDebounced() {
+  clearTimeout(historySearchTimer);
+  historySearchTimer = setTimeout(() => {
+    historyOffset = 0;
+    historyCurrentPage = 1;
+    loadHistory();
+  }, 350);
+}
+
+function clearHistoryFilters() {
+  document.getElementById('historySearch').value = '';
+  document.getElementById('historyAgentFilter').value = '';
+  document.getElementById('historyDateFilter').value = '';
+  document.getElementById('historyEventFilter').value = '';
+  historyOffset = 0;
+  historyCurrentPage = 1;
+  loadHistory();
+}
+
+async function loadHistory() {
+  const search    = document.getElementById('historySearch').value.trim();
+  const agent     = document.getElementById('historyAgentFilter').value;
+  const date      = document.getElementById('historyDateFilter').value;
+  const eventType = document.getElementById('historyEventFilter').value;
+
+  const params = new URLSearchParams({ limit: HISTORY_PAGE, offset: historyOffset });
+  if (search)    params.set('search',     search);
+  if (agent)     params.set('agent',      agent);
+  if (date)      params.set('date',       date);
+  if (eventType) params.set('event_type', eventType);
+
+  const resultsEl = document.getElementById('historyResults');
+  resultsEl.innerHTML = '<div class="history-loading">⏳ Loading…</div>';
+
+  try {
+    const res = await fetch(HISTORY_API + '?' + params.toString(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('bad response');
+    const data = await res.json();
+
+    historyTotalEntries = data.total || 0;
+    renderHistoryResults(data.entries || []);
+    renderHistoryPagination(data.count || 0, data.total || 0);
+    document.getElementById('historyCount').textContent =
+      `${data.total} entries (${data.count} shown)`;
+  } catch (e) {
+    resultsEl.innerHTML = '<div class="history-empty">⚠️ Could not reach localhost:7800 — start agent-status-server.py</div>';
+    document.getElementById('historyCount').textContent = '—';
+  }
+}
+
+async function loadHistorySummary() {
+  const chartEl = document.getElementById('historySummaryChart');
+  try {
+    const res = await fetch('http://localhost:7800/logs/summary', { cache: 'no-store' });
+    if (!res.ok) throw new Error('bad response');
+    const summary = await res.json(); // {date: {agent: count}}
+
+    // Build last 7 days
+    const days = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const key = d.toISOString().split('T')[0];
+      days.push({ key, label: d.toLocaleDateString('en', { weekday: 'short' }) + ' ' + d.getDate() });
+    }
+
+    const allAgents = Object.keys(AGENT_COLORS);
+
+    // Find max total for scaling
+    let maxTotal = 1;
+    days.forEach(day => {
+      const dayData = summary[day.key] || {};
+      const total = Object.values(dayData).reduce((a, b) => a + b, 0);
+      if (total > maxTotal) maxTotal = total;
+    });
+
+    const chartHtml = days.map(day => {
+      const dayData = summary[day.key] || {};
+      const total = Object.values(dayData).reduce((a, b) => a + b, 0);
+
+      const barsHtml = allAgents.map(agentId => {
+        const count = dayData[agentId] || 0;
+        if (count === 0) return '';
+        const heightPct = Math.max(4, Math.round((count / maxTotal) * 52));
+        const color = AGENT_COLORS[agentId] || '#888';
+        const label = AGENT_LABELS[agentId] || agentId;
+        return `<div class="history-chart-bar"
+          style="height:${heightPct}px; background:${color}; opacity:0.85;"
+          title="${label}: ${count}"></div>`;
+      }).join('');
+
+      return `<div class="history-chart-day">
+        <div class="history-chart-bars">${barsHtml || '<div style="height:2px;width:4px;background:var(--border)"></div>'}</div>
+        <div class="history-chart-total">${total || ''}</div>
+        <div class="history-chart-label">${day.label}</div>
+      </div>`;
+    }).join('');
+
+    chartEl.innerHTML = chartHtml;
+  } catch (e) {
+    chartEl.innerHTML = '<div class="history-chart-loading">— server offline —</div>';
+  }
+}
+
+function renderHistoryResults(entries) {
+  const resultsEl = document.getElementById('historyResults');
+  if (!entries || entries.length === 0) {
+    resultsEl.innerHTML = '<div class="history-empty">No entries match your filters.</div>';
+    return;
+  }
+
+  resultsEl.innerHTML = entries.map((e, i) => {
+    const agentId   = e.agent || 'unknown';
+    const agentLabel = AGENT_LABELS[agentId] || agentId;
+    const color     = AGENT_COLORS[agentId] || '#888';
+    const ts        = e.timestamp ? new Date(e.timestamp).toLocaleString() : '—';
+    const title     = escHtml(e.title || '(no title)');
+    const detail    = escHtml(e.detail || '');
+    const file      = e.file ? `<span class="history-file">${escHtml(e.file)}</span>` : '';
+    const eventType = escHtml(e.event_type || '');
+    const tags      = (e.tags || []).map(t => `<span class="history-tag">${escHtml(t)}</span>`).join('');
+    const entryId   = `hentry-${i}`;
+
+    return `<div class="history-entry" id="${entryId}" onclick="toggleHistoryEntry('${entryId}')">
+      <div class="history-entry-header">
+        <span class="history-ts">${ts}</span>
+        <span class="history-agent-badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${agentLabel}</span>
+        <span class="history-event-badge">${eventType}</span>
+        <span class="history-title">${title}</span>
+        ${file}
+      </div>
+      <div class="history-detail-panel">
+        <div class="history-detail-text">${detail || '(no detail)'}</div>
+        ${tags ? `<div class="history-detail-tags">${tags}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleHistoryEntry(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('expanded');
+}
+
+function renderHistoryPagination(shown, total) {
+  const prevBtn  = document.getElementById('historyPrevBtn');
+  const nextBtn  = document.getElementById('historyNextBtn');
+  const pageInfo = document.getElementById('historyPageInfo');
+
+  const totalPages = Math.max(1, Math.ceil(total / HISTORY_PAGE));
+  pageInfo.textContent = `Page ${historyCurrentPage} of ${totalPages}`;
+  prevBtn.disabled = historyCurrentPage <= 1;
+  nextBtn.disabled = historyOffset + HISTORY_PAGE >= total;
+}
+
+function historyPrevPage() {
+  if (historyCurrentPage <= 1) return;
+  historyCurrentPage--;
+  historyOffset = (historyCurrentPage - 1) * HISTORY_PAGE;
+  loadHistory();
+}
+
+function historyNextPage() {
+  historyCurrentPage++;
+  historyOffset = (historyCurrentPage - 1) * HISTORY_PAGE;
+  loadHistory();
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Patch switchTab to trigger history load
+const _origSwitchTab = switchTab;
+// Override switchTab to handle history tab
+function switchTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  event.currentTarget.classList.add('active');
+  if (tab === 'feed') {
+    setTimeout(() => scrollFeedToBottom(true), 50);
+  }
+  if (tab === 'history') {
+    loadHistory();
+    loadHistorySummary();
+  }
+}
 </script>
 </body>
 </html>
